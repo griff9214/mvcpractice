@@ -24,7 +24,7 @@ class DB {
 
     public static function getById(int $id = 227){
 //        $res = $this->db->query("SELECT * FROM `wp_posts` WHERE `post_type` = 'uslugi' AND `ID` = {$id}");
-        $res = self::$db->prepare("SELECT * FROM `wp_posts` WHERE `post_type` = 'uslugi' AND `ID` = {$id}");
+        $res = self::$db->prepare("SELECT * FROM `wp_posts` WHERE `ID` = {$id}");
         $res->execute();
         $res->setFetchMode(PDO::FETCH_ASSOC);
         return $res->fetch(PDO::FETCH_ASSOC);

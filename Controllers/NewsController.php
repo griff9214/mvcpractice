@@ -30,7 +30,9 @@ class NewsController
     public function actionViewItem($id = 1)
     {
         echo "i'll show item with id={$id}";
-        print_r (NewsModel::getByID(227));
+        print_r (NewsModel::getByID($id));
+
+        //TODO: сюда подключается шаблон, в который подтягиваются данные из NewsModel::getByID($id).
     }
 
     public function actionViewItemInCat ($category, $id)
